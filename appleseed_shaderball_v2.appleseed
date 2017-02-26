@@ -133,7 +133,7 @@
                 <parameter name="normal_map_up" value="z" />
                 <parameter name="shade_alpha_cutouts" value="false" />
             </material>
-            <material name="test_material" model="disney_material">
+            <material name="test_mat" model="disney_material">
                 <parameter name="bump_amplitude" value="1.0" />
                 <parameter name="bump_offset" value="2.0" />
                 <parameter name="displacement_method" value="bump" />
@@ -298,8 +298,8 @@
                         0.000000000000000 0.000000000000000 0.000000000000000 1.000000000000000
                     </matrix>
                 </transform>
-                <assign_material slot="material_slot_0" side="front" material="test_material" />
-                <assign_material slot="material_slot_0" side="back" material="test_material" />
+                <assign_material slot="material_slot_0" side="front" material="test_mat" />
+                <assign_material slot="material_slot_0" side="back" material="test_mat" />
             </object_instance>
             <object_instance name="shaderball_core_inst" object="shaderball_core.shaderball_core">
                 <transform>
@@ -310,8 +310,8 @@
                         0.000000000000000 0.000000000000000 0.000000000000000 1.000000000000000
                     </matrix>
                 </transform>
-                <assign_material slot="material_slot_0" side="front" material="test_material" />
-                <assign_material slot="material_slot_0" side="back" material="test_material" />
+                <assign_material slot="material_slot_0" side="front" material="test_mat" />
+                <assign_material slot="material_slot_0" side="back" material="test_mat" />
             </object_instance>
             <object_instance name="shaderball_inner_shell_inst" object="shaderball_inner_shell.shaderball_inner_shell">
                 <transform>
@@ -322,8 +322,8 @@
                         0.000000000000000 0.000000000000000 0.000000000000000 1.000000000000000
                     </matrix>
                 </transform>
-                <assign_material slot="material_slot_0" side="front" material="test_material" />
-                <assign_material slot="material_slot_0" side="back" material="test_material" />
+                <assign_material slot="material_slot_0" side="front" material="test_mat" />
+                <assign_material slot="material_slot_0" side="back" material="test_mat" />
             </object_instance>
             <object_instance name="shaderball_outer_shell_inst" object="shaderball_outer_shell.shaderball_outer_shell">
                 <transform>
@@ -334,8 +334,8 @@
                         0.000000000000000 0.000000000000000 0.000000000000000 1.000000000000000
                     </matrix>
                 </transform>
-                <assign_material slot="material_slot_0" side="front" material="test_material" />
-                <assign_material slot="material_slot_0" side="back" material="test_material" />
+                <assign_material slot="material_slot_0" side="front" material="test_mat" />
+                <assign_material slot="material_slot_0" side="back" material="test_mat" />
             </object_instance>
             <object_instance name="shaderball_stairs_inst" object="shaderball_stairs.shaderball_stairs">
                 <transform>
@@ -346,8 +346,8 @@
                         0.000000000000000 0.000000000000000 0.000000000000000 1.000000000000000
                     </matrix>
                 </transform>
-                <assign_material slot="material_slot_0" side="front" material="test_material" />
-                <assign_material slot="material_slot_0" side="back" material="test_material" />
+                <assign_material slot="material_slot_0" side="front" material="test_mat" />
+                <assign_material slot="material_slot_0" side="back" material="test_mat" />
             </object_instance>
         </assembly>
         <assembly_instance name="assembly_inst" assembly="assembly">
