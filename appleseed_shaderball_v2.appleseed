@@ -3,7 +3,7 @@
 <project format_revision="14">
     <scene>
         <camera name="camera" model="pinhole_camera">
-            <parameter name="controller_target" value="2.98023e-08 0.377486 0.0507038" />
+            <parameter name="controller_target" value="-0.0012061 0.0452693 0.005102" />
             <parameter name="film_dimensions" value="1024 1024" />
             <parameter name="horizontal_fov" value="45.513" />
             <parameter name="near_z" value="-0.001" />
