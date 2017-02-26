@@ -81,7 +81,7 @@
                 <parameter name="shade_alpha_cutouts" value="false" />
                 <parameters name="layer1">
                     <parameter name="anisotropic" value="0.0" />
-                    <parameter name="base_color" value="texture(&quot;grey_texture.png&quot;, $u % 2055, $v % 2055)" />
+                    <parameter name="base_color" value="texture(&quot;background_texture.png&quot;, $u % 2055, $v % 2055)" />
                     <parameter name="clearcoat" value="0.0" />
                     <parameter name="clearcoat_gloss" value="0.0" />
                     <parameter name="layer_folded" value="false" />
@@ -173,14 +173,17 @@
             <object name="background" model="mesh_object">
                 <parameter name="filename" value="background.binarymesh" />
             </object>
-            <object name="base" model="mesh_object">
-                <parameter name="filename" value="base.binarymesh" />
+            <object name="bounce_card_back" model="mesh_object">
+                <parameter name="filename" value="bounce_card_back.binarymesh" />
             </object>
-            <object name="core" model="mesh_object">
-                <parameter name="filename" value="core.binarymesh" />
+            <object name="bounce_card_left" model="mesh_object">
+                <parameter name="filename" value="bounce_card_left.binarymesh" />
             </object>
-            <object name="inner_shell" model="mesh_object">
-                <parameter name="filename" value="inner_shell.binarymesh" />
+            <object name="bounce_card_right" model="mesh_object">
+                <parameter name="filename" value="bounce_card_right.binarymesh" />
+            </object>
+            <object name="bounce_card_top" model="mesh_object">
+                <parameter name="filename" value="bounce_card_top.binarymesh" />
             </object>
             <object name="light_center_back" model="mesh_object">
                 <parameter name="filename" value="light_center_back.binarymesh" />
@@ -191,78 +194,87 @@
             <object name="light_right_front" model="mesh_object">
                 <parameter name="filename" value="light_right_front.binarymesh" />
             </object>
-            <object name="outer_shell" model="mesh_object">
-                <parameter name="filename" value="outer_shell.binarymesh" />
+            <object name="shaderball_base" model="mesh_object">
+                <parameter name="filename" value="shaderball_base.binarymesh" />
             </object>
-            <object name="rectangle_plates_back" model="mesh_object">
-                <parameter name="filename" value="rectangle_plates_back.binarymesh" />
+            <object name="shaderball_core" model="mesh_object">
+                <parameter name="filename" value="shaderball_core.binarymesh" />
             </object>
-            <object name="rectangle_plates_left" model="mesh_object">
-                <parameter name="filename" value="rectangle_plates_left.binarymesh" />
+            <object name="shaderball_inner_shell" model="mesh_object">
+                <parameter name="filename" value="shaderball_inner_shell.binarymesh" />
             </object>
-            <object name="rectangle_plates_right" model="mesh_object">
-                <parameter name="filename" value="rectangle_plates_right.binarymesh" />
+            <object name="shaderball_outer_shell" model="mesh_object">
+                <parameter name="filename" value="shaderball_outer_shell.binarymesh" />
             </object>
-            <object name="rectangle_plates_top" model="mesh_object">
-                <parameter name="filename" value="rectangle_plates_top.binarymesh" />
-            </object>
-            <object name="stairs" model="mesh_object">
-                <parameter name="filename" value="stairs.binarymesh" />
+            <object name="shaderball_stairs" model="mesh_object">
+                <parameter name="filename" value="shaderball_stairs.binarymesh" />
             </object>
             <object_instance name="background_inst" object="background.background">
                 <transform>
                     <matrix>
-                        0.009999999776483 0.000000000000000 0.000000000000000 0.000000000000000
-                        0.000000000000000 0.000000000000000 0.009999999776483 0.000000000000000
-                        -0.000000000000000 -0.009999999776483 -0.000000000000000 -0.308789670467377
+                        1.000000000000000 0.000000000000000 0.000000000000000 0.000000000000000
+                        0.000000000000000 0.000000000000000 1.000000000000000 0.000000000000000
+                        -0.000000000000000 -1.000000000000000 -0.000000000000000 -30.878967285156250
                         0.000000000000000 0.000000000000000 0.000000000000000 1.000000000000000
                     </matrix>
                 </transform>
                 <assign_material slot="material_slot_0" side="front" material="background_mat" />
                 <assign_material slot="material_slot_0" side="back" material="background_mat" />
             </object_instance>
-            <object_instance name="base_inst" object="base.base">
+            <object_instance name="bounce_card_back_inst" object="bounce_card_back.bounce_card_back">
                 <transform>
                     <matrix>
-                        0.009999999776483 0.000000000000000 0.000000000000000 -0.000000001084804
-                        0.000000000000000 0.000000000000000 0.009999999776483 0.000000000000000
-                        -0.000000000000000 -0.009999999776483 -0.000000000000000 -0.000000000000000
+                        0.000000075497901 -1.000000000000000 -0.000000162920685 0.000000000000000
+                        -1.000000000000000 -0.000000075497901 -0.000000000000012 34.783069610595703
+                        0.000000000000000 0.000000162920685 -1.000000000000000 48.468139648437500
                         0.000000000000000 0.000000000000000 0.000000000000000 1.000000000000000
                     </matrix>
                 </transform>
-                <assign_material slot="material_slot_0" side="front" material="test_material" />
-                <assign_material slot="material_slot_0" side="back" material="test_material" />
+                <assign_material slot="material_slot_0" side="front" material="bounce_card_mat" />
+                <assign_material slot="material_slot_0" side="back" material="bounce_card_mat" />
             </object_instance>
-            <object_instance name="core_inst" object="core.core">
+            <object_instance name="bounce_card_left_inst" object="bounce_card_left.bounce_card_left">
                 <transform>
                     <matrix>
-                        0.009999999776483 0.000000000000000 0.000000000000000 0.000000000000000
-                        0.000000000000000 -0.000000000931323 0.009999999776483 0.058676891028881
-                        -0.000000000000000 -0.009999999776483 -0.000000000931323 -0.000000000000000
+                        0.000000313916473 0.000000000000000 1.000000000000000 -69.891464233398438
+                        -1.000000000000000 0.000000000000000 0.000000313916473 28.756839752197266
+                        -0.000000000000000 -1.000000000000000 -0.000000000000000 -0.000000000000000
                         0.000000000000000 0.000000000000000 0.000000000000000 1.000000000000000
                     </matrix>
                 </transform>
-                <assign_material slot="material_slot_0" side="front" material="test_material" />
-                <assign_material slot="material_slot_0" side="back" material="test_material" />
+                <assign_material slot="material_slot_0" side="front" material="bounce_card_mat" />
+                <assign_material slot="material_slot_0" side="back" material="bounce_card_mat" />
             </object_instance>
-            <object_instance name="inner_shell_inst" object="inner_shell.inner_shell">
+            <object_instance name="bounce_card_right_inst" object="bounce_card_right.bounce_card_right">
                 <transform>
                     <matrix>
-                        0.009999999776483 0.000000000000000 0.000000000000000 0.000000000000000
-                        0.000000000000000 -0.000000000931323 0.009999999776483 0.058676891028881
-                        -0.000000000000000 -0.009999999776483 -0.000000000931323 -0.000000000000000
+                        0.000000313916473 -0.000000150995803 -1.000000000000000 69.891464233398438
+                        -1.000000000000000 -0.000000000000047 -0.000000313916473 28.756839752197266
+                        0.000000000000000 1.000000000000000 -0.000000150995803 0.000000000000000
                         0.000000000000000 0.000000000000000 0.000000000000000 1.000000000000000
                     </matrix>
                 </transform>
-                <assign_material slot="material_slot_0" side="front" material="test_material" />
-                <assign_material slot="material_slot_0" side="back" material="test_material" />
+                <assign_material slot="material_slot_0" side="front" material="bounce_card_mat" />
+                <assign_material slot="material_slot_0" side="back" material="bounce_card_mat" />
+            </object_instance>
+            <object_instance name="bounce_card_top_inst" object="bounce_card_top.bounce_card_top">
+                <transform>
+                    <matrix>
+                        0.000000313916473 -1.000000000000000 -0.000001279515686 0.000000000000000
+                        0.000000000000000 0.000001279515686 -1.000000000000000 65.461822509765625
+                        1.000000000000000 0.000000313916473 0.000000000000402 0.906570434570313
+                        0.000000000000000 0.000000000000000 0.000000000000000 1.000000000000000
+                    </matrix>
+                </transform>
+                <assign_material slot="material_slot_0" side="front" material="bounce_card_mat" />
+                <assign_material slot="material_slot_0" side="back" material="bounce_card_mat" />
             </object_instance>
             <object_instance name="light_center_back_inst" object="light_center_back.light_center_back">
                 <transform>
                     <matrix>
-                        0.009999999776483 -0.000000000293385 0.000000001658031 0.000000000000000
-                        -0.000000001658031 -0.000000000465661 0.010000000707805 0.516854286193848
-                        -0.000000000293385 -0.009999999776483 -0.000000000931323 -0.296813696622849
+                        1.000000000000000 0.000000000000001 -0.000000000000001 0.000000000000001
+                        -0.000000000000002 0.694658756256104 -0.719339430332184 55.375141143798828
+                        0.000000000000000 0.719339430332184 0.694658756256104 -32.001773834228516
                         0.000000000000000 0.000000000000000 0.000000000000000 1.000000000000000
                     </matrix>
                 </transform>
@@ -271,9 +283,9 @@
             <object_instance name="light_left_front_inst" object="light_left_front.light_left_front">
                 <transform>
                     <matrix>
-                        0.010000000707805 0.000000000465661 -0.000000003725290 -0.553698718547821
-                        0.000000003958121 0.000000002677552 0.009999998845160 0.516854226589203
-                        0.000000000931323 -0.010000000707805 0.000000001629815 0.353514254093170
+                        0.999999880790710 0.000000029802322 -0.000000387430191 -55.369873046875000
+                        0.000000387430191 0.000000283122063 0.999999642372131 51.685424804687500
+                        0.000000059604645 -1.000000119209290 -0.000000029802322 35.351425170898438
                         0.000000000000000 0.000000000000000 0.000000000000000 1.000000000000000
                     </matrix>
                 </transform>
@@ -282,80 +294,68 @@
             <object_instance name="light_right_front_inst" object="light_right_front.light_right_front">
                 <transform>
                     <matrix>
-                        0.009999999776483 -0.000000000232831 0.000000000000000 0.494632571935654
-                        0.000000000000000 0.000000000000000 0.009999999776483 0.516854226589203
-                        -0.000000000698492 -0.009999999776483 0.000000000698492 0.353514283895493
+                        1.000000000000000 0.000000000000000 0.000000000000000 49.463256835937500
+                        0.000000029802322 0.000000000000000 1.000000000000000 51.685420989990234
+                        -0.000000059604645 -1.000000000000000 0.000000059604645 35.351428985595703
                         0.000000000000000 0.000000000000000 0.000000000000000 1.000000000000000
                     </matrix>
                 </transform>
                 <assign_material slot="material_slot_0" side="front" material="light_right_front_mat" />
             </object_instance>
-            <object_instance name="outer_shell_inst" object="outer_shell.outer_shell">
+            <object_instance name="shaderball_base_inst" object="shaderball_base.shaderball_base">
                 <transform>
                     <matrix>
-                        0.009999999776483 0.000000000000000 0.000000000000000 0.000000000000000
-                        0.000000000000000 -0.000000000931323 0.009999999776483 0.058676891028881
-                        -0.000000000000000 -0.009999999776483 -0.000000000931323 -0.000000000000000
+                        1.000000000000000 0.000000000000000 0.000000000000000 -0.000000108480435
+                        0.000000000000000 0.000000000000000 1.000000000000000 0.000000000000000
+                        -0.000000000000000 -1.000000000000000 -0.000000000000000 -0.000000000000000
                         0.000000000000000 0.000000000000000 0.000000000000000 1.000000000000000
                     </matrix>
                 </transform>
                 <assign_material slot="material_slot_0" side="front" material="test_material" />
                 <assign_material slot="material_slot_0" side="back" material="test_material" />
             </object_instance>
-            <object_instance name="rectangle_plates_back_inst" object="rectangle_plates_back.rectangle_plates_back">
+            <object_instance name="shaderball_core_inst" object="shaderball_core.shaderball_core">
                 <transform>
                     <matrix>
-                        0.000000000754979 -0.009999999776483 -0.000000001629207 0.000000000000000
-                        -0.009999999776483 -0.000000000754979 0.000000000000000 0.347830682992935
-                        0.000000000000000 0.000000001629207 -0.009999999776483 0.484681397676468
+                        1.000000000000000 0.000000000000000 0.000000000000000 0.000000000000007
+                        0.000000000000000 -0.000000029802322 1.000000000000000 5.867689132690430
+                        -0.000000000000000 -1.000000000000000 -0.000000029802322 -0.000000000000000
                         0.000000000000000 0.000000000000000 0.000000000000000 1.000000000000000
                     </matrix>
                 </transform>
-                <assign_material slot="material_slot_0" side="front" material="bounce_card_mat" />
-                <assign_material slot="material_slot_0" side="back" material="bounce_card_mat" />
+                <assign_material slot="material_slot_0" side="front" material="test_material" />
+                <assign_material slot="material_slot_0" side="back" material="test_material" />
             </object_instance>
-            <object_instance name="rectangle_plates_left_inst" object="rectangle_plates_left.rectangle_plates_left">
+            <object_instance name="shaderball_inner_shell_inst" object="shaderball_inner_shell.shaderball_inner_shell">
                 <transform>
                     <matrix>
-                        0.000000003139165 0.000000000000000 0.009999999776483 -0.698914647102356
-                        -0.009999999776483 0.000000000000000 0.000000003139165 0.287568390369415
-                        -0.000000000000000 -0.009999999776483 -0.000000000000000 -0.000000000000000
+                        1.000000000000000 0.000000000000000 0.000000000000000 0.000000000000007
+                        0.000000000000000 -0.000000029802322 1.000000000000000 5.867689132690430
+                        -0.000000000000000 -1.000000000000000 -0.000000029802322 -0.000000000000000
                         0.000000000000000 0.000000000000000 0.000000000000000 1.000000000000000
                     </matrix>
                 </transform>
-                <assign_material slot="material_slot_0" side="front" material="bounce_card_mat" />
-                <assign_material slot="material_slot_0" side="back" material="bounce_card_mat" />
+                <assign_material slot="material_slot_0" side="front" material="test_material" />
+                <assign_material slot="material_slot_0" side="back" material="test_material" />
             </object_instance>
-            <object_instance name="rectangle_plates_right_inst" object="rectangle_plates_right.rectangle_plates_right">
+            <object_instance name="shaderball_outer_shell_inst" object="shaderball_outer_shell.shaderball_outer_shell">
                 <transform>
                     <matrix>
-                        0.000000003139165 -0.000000001509958 -0.009999999776483 0.698914647102356
-                        -0.009999999776483 0.000000000000000 -0.000000003139165 0.287568390369415
-                        0.000000000000000 0.009999999776483 -0.000000001509958 0.000000000000000
+                        1.000000000000000 0.000000000000000 0.000000000000000 0.000000000000000
+                        0.000000000000000 0.000000000000000 1.000000000000000 5.867691040039063
+                        -0.000000000000000 -1.000000000000000 -0.000000000000000 -0.000000000000000
                         0.000000000000000 0.000000000000000 0.000000000000000 1.000000000000000
                     </matrix>
                 </transform>
-                <assign_material slot="material_slot_0" side="front" material="bounce_card_mat" />
-                <assign_material slot="material_slot_0" side="back" material="bounce_card_mat" />
+                <assign_material slot="material_slot_0" side="front" material="test_material" />
+                <assign_material slot="material_slot_0" side="back" material="test_material" />
             </object_instance>
-            <object_instance name="rectangle_plates_top_inst" object="rectangle_plates_top.rectangle_plates_top">
+            <object_instance name="shaderball_stairs_inst" object="shaderball_stairs.shaderball_stairs">
                 <transform>
                     <matrix>
-                        0.000000003139165 -0.009999999776483 -0.000000010410971 0.000000000000000
-                        0.000000000000000 0.000000010410971 -0.009999999776483 0.654618203639984
-                        0.009999999776483 0.000000003139165 0.000000000000003 0.009065704420209
-                        0.000000000000000 0.000000000000000 0.000000000000000 1.000000000000000
-                    </matrix>
-                </transform>
-                <assign_material slot="material_slot_0" side="front" material="bounce_card_mat" />
-                <assign_material slot="material_slot_0" side="back" material="bounce_card_mat" />
-            </object_instance>
-            <object_instance name="stairs_inst" object="stairs.stairs">
-                <transform>
-                    <matrix>
-                        0.009999999776483 -0.000000003496911 0.000000000000000 -0.000000001084804
-                        0.000000000000000 0.000000000000000 0.009999999776483 0.000030288696507
-                        -0.000000003496911 -0.009999999776483 -0.000000000000000 -0.000000000000000
+                        1.000000000000000 -0.000000349691106 0.000000000000000 -0.000000108480442
+                        0.000000000000000 0.000000000000000 1.000000000000000 0.003028869628906
+                        -0.000000349691106 -1.000000000000000 -0.000000000000000 -0.000000000000000
                         0.000000000000000 0.000000000000000 0.000000000000000 1.000000000000000
                     </matrix>
                 </transform>
@@ -364,6 +364,14 @@
             </object_instance>
         </assembly>
         <assembly_instance name="assembly_inst" assembly="assembly">
+            <transform time="0">
+                <matrix>
+                    0.009999999776483 0.000000000000000 0.000000000000000 0.000000000000000
+                    0.000000000000000 0.009999999776483 0.000000000000000 0.000000000000000
+                    0.000000000000000 0.000000000000000 0.009999999776483 0.000000000000000
+                    0.000000000000000 0.000000000000000 0.000000000000000 1.000000000000000
+                </matrix>
+            </transform>
         </assembly_instance>
     </scene>
     <output>
