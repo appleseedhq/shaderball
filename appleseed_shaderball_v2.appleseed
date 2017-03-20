@@ -85,7 +85,6 @@
                 <parameter name="radiance_multiplier" value="30" />
             </edf>
             <material name="background_mat" model="disney_material">
-                <parameter name="alpha_map" value="1" />
                 <parameter name="bump_amplitude" value="1.0" />
                 <parameter name="bump_offset" value="2.0" />
                 <parameter name="displacement_method" value="bump" />
