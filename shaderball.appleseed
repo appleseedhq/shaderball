@@ -171,7 +171,7 @@
                 </parameters>
             </material>
             <object name="shaderball" model="mesh_object">
-                <parameter name="filename" value="N:\appleseed\shaderball\geometry\shaderball.binarymesh" />
+                <parameter name="filename" value="shaderball.binarymesh" />
             </object>
             <object_instance name="shaderball.background_inst" object="shaderball.background">
                 <assign_material slot="default" side="front" material="background_mat" />
